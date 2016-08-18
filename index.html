@@ -1,19 +1,43 @@
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<script type="text/javascript" src="../javascripts/jquery.min.js"></script>
+	<script type="text/javascript">
+		var timer=1;
+		$(function(){
+			setInterval(SetColor,1000);
+		})
+
+
+
+
+
+		function SetColor(){
+			var count=timer%4
+			$('span').css('color','black');
+			if(count==0){
+				$('#l').css('color','red');
+			}
+			else if (count==1) {
+				#('#h').css('color','blue');
+			}
+			else if (count==2) {
+				$('#z').css('color','yellow');
+			}
+			else if(count==3){
+				$('#d').css('color','green');
+			}
+			timer++;
+		}
+	</script>
 	<title>Document</title>
 </head>
 <body>
-		<p>Hello World</p>
+		<span id='l'>老</span>
+		<span id='h'>黄</span>
+		<span id='z'>真</span>
+		<span id='d'>逗</span>
 </body>
-</html>
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-  </head>
-  <body>
-   Hello Wolrd
-  </body>
 </html>
