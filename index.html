@@ -5,6 +5,17 @@
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
 	<script type="text/javascript">
+		(function(){
+			$.ajax({
+				url:'../Data/HomePage.json',
+				method:'post',
+				dataType:'json',
+				async:false,
+				success:function(data){
+					alert(JSON.stringify(data));
+				}
+			});
+		})
 	</script>
 	<title>Document</title>
 </head>
