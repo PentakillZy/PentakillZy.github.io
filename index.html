@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
 	<script type="text/javascript" src="Data/HomePageData.js"></script>
 	<script type="text/javascript">
-		$(function () {
+		/* $(function () {
 			var data = homepageObj.GetData("menu");
 			var html = "<ul>";
 			for (var i = 0; i < data.length; i++) {
@@ -16,6 +16,19 @@
 			}
 			html += "</ul>";
 			$('#menuList').html(html);
+		}) */
+		$(function () {
+			$.ajax({
+				url: 'Data/1.txt',
+				type: 'get',
+				async: false,
+				success: function (data) {
+					alert(data);
+				},
+				error: function (msg) {
+					alert('1');
+				 }
+			});
 		})
 	</script>
 	<title>Document</title>
