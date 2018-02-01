@@ -7,15 +7,20 @@
 	<script type="text/javascript">
 		(function(){
 			$.ajax({
-				url:'../Data/HomePage.json',
-				type:'get',
+				//url:'/Data/HomePage.json',
+				url:'/params.json',
+				type:'post',
+				//contentType:"application/json",
 				dataType:'json',
 				async:false,
 				success:function(data){
 					alert(JSON.stringify(data));
+				},
+				error:function(msg){
+					alert('111');
 				}
 			});
-		})
+		})();
 	</script>
 	<title>Document</title>
 </head>
