@@ -1,31 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="Data/HomePageData.js"></script>
 	<script type="text/javascript">
-		(function(){
-			$.ajax({
-				//url:'/Data/HomePage.json',
-				url:'/params.json',
-				type:'post',
-				//contentType:"application/json",
-				dataType:'json',
-				async:false,
-				success:function(data){
-					alert(JSON.stringify(data));
-				},
-				error:function(msg){
-					alert('111');
-				}
-			});
-		})();
+		$(function () {
+			var data = homepageObj.GetData("menu");
+			var html = "<ul>";
+			for (var i = 0; i < data.length; i++) {
+				html += "<li>";
+				html += "<a href='" + data[i]["href"] + "' >" + data[i]["name"] + "</a>";
+				html += "</li>";
+			}
+			html += "</ul>";
+			$('#menuList').html(html);
+		})
 	</script>
 	<title>Document</title>
 </head>
+
 <body>
-		<label>ProjectList</label>
-		<a href='https://pentakillzy.github.io/test/'>test</a>
+	<label>ProjectList</label>
+	<div id='menuList'>
+
+	</div>
 </body>
+
 </html>
